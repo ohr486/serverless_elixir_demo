@@ -1,0 +1,13 @@
+%{
+  "artificery": {:hex, :artificery, "0.4.2", "3ded6e29e13113af52811c72f414d1e88f711410cac1b619ab3a2666bbd7efd4", [:mix], [], "hexpm"},
+  "base16": {:hex, :base16, "1.0.0", "283644e2b21bd5915acb7178bed7851fb07c6e5749b8fad68a53c501092176d9", [:rebar3], [], "hexpm"},
+  "distillery": {:hex, :distillery, "2.0.14", "25fc1cdad06282334dbf4a11b6e869cc002855c4e11825157498491df2eed594", [:mix], [{:artificery, "~> 0.2", [hex: :artificery, repo: "hexpm", optional: false]}], "hexpm"},
+  "eini": {:hex, :eini, "1.2.6", "dffa48476fd89fb6e41ceea0adfa1bc6e7862ccd6584417442f8bb37e5d34715", [:rebar3], [], "hexpm"},
+  "erlcloud": {:hex, :erlcloud, "3.2.7", "85a947b7f53c58a884590423437670679b61af03536d7fb583beeb2b5054d0f2", [:rebar3], [{:base16, "1.0.0", [hex: :base16, repo: "hexpm", optional: false]}, {:eini, "1.2.6", [hex: :eini, repo: "hexpm", optional: false]}, {:jsx, "2.9.0", [hex: :jsx, repo: "hexpm", optional: false]}, {:lhttpc, "1.6.2", [hex: :lhttpc, repo: "hexpm", optional: false]}], "hexpm"},
+  "erllambda": {:hex, :erllambda, "2.1.1", "24938389abd9d0e03d377739c95acd5d26f22eaefcd7477385167509c3cca738", [:rebar3], [{:erlcloud, "~>3.2.4", [hex: :erlcloud, repo: "hexpm", optional: false]}, {:jsone, "~>1.4.7", [hex: :jsone, repo: "hexpm", optional: false]}, {:lhttpc, "~>1.6.2", [hex: :lhttpc, repo: "hexpm", optional: false]}], "hexpm"},
+  "jiffy": {:hex, :jiffy, "0.15.2", "de266c390111fd4ea28b9302f0bc3d7472468f3b8e0aceabfbefa26d08cd73b7", [:rebar3], [], "hexpm"},
+  "jsone": {:hex, :jsone, "1.4.7", "a970c23d9700ae7842b526c57677e6e3f10894b429524696ead547e9302391c0", [:rebar3], [], "hexpm"},
+  "jsx": {:hex, :jsx, "2.9.0", "d2f6e5f069c00266cad52fb15d87c428579ea4d7d73a33669e12679e203329dd", [:mix, :rebar3], [], "hexpm"},
+  "lhttpc": {:hex, :lhttpc, "1.6.2", "044f16f0018c7aa7e945e9e9406c7f6035e0b8bc08bf77b00c78ce260e1071e3", [:rebar3], [], "hexpm"},
+  "mix_erllambda": {:hex, :mix_erllambda, "1.0.0", "928c23b09786df65c77833602520bcc72d7b4e36bcd846d55f554899f0c5141c", [:mix], [{:distillery, "~> 2.0", [hex: :distillery, repo: "hexpm", optional: false]}], "hexpm"},
+}
