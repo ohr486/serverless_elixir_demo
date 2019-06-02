@@ -1,21 +1,37 @@
 # ServerlessElixirDemo
 
-**TODO: Add description**
+## build用コンテナイメージのビルド
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `serverless_elixir_demo` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:serverless_elixir_demo, "~> 0.1.0"}
-  ]
-end
+```
+$ git clone https://github.com/alertlogic/erllambda_docker.git
+$ docker build -t erllambda:20.3 erllambda_docker/20
+$ docker build -t erllambda:20.3-elixir erllambda_docker/elixir
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/serverless_elixir_demo](https://hexdocs.pm/serverless_elixir_demo).
+## demo
 
+### step.1
+make s3 bucket: japanex-demo
+
+### step.2 packaging
+aws cloudformation package --template-file etc/template.yaml --output-template-file packaged.yaml --s3-bucket YOUR-BUCKET
+
+# step.3 deploy
+aws cloudformation deploy --capabilities CAPABILITY_IAM --template-file packaged.yaml --stack-name <YOUR-STACK>
+
+# step.4 desc stack
+aws cloudformation describe-stacks --stack-name YOUR-STACK --query 'Stacks[].Outputs'
+
+APIENDP=<SET YOUR ENDPOINT>
+
+# step.5 create item
+curl -X POST "$APIENDP?id=foo&bar=quz"
+
+# step.6 get item
+curl $APIENDP
+
+# step.7 delete item
+curl -X DELETE "$APIENDP?id=foo"
+
+# step.8 delete stack
+aws cloudformation delete-stack --stack-name <YOUR-STACK>
