@@ -2,13 +2,21 @@
 
 ## build用コンテナイメージのビルド
 
+edit:
+https://github.com/alertlogic/erllambda\_docker/blob/master/elixir/Dockerfile#L1
+https://github.com/alertlogic/erllambda\_docker/blob/master/elixir/Dockerfile#L3
+
 ```
 $ git clone https://github.com/alertlogic/erllambda_docker.git
-$ docker build -t erllambda:20.3 erllambda_docker/20
-$ docker build -t erllambda:20.3-elixir erllambda_docker/elixir
+$ docker build -t erllambda:21 erllambda_docker/21
+$ docker build -t erllambda:21-elixir erllambda_docker/elixir
 ```
 
 ## demo
+
+### step.0
+mix deps.get
+docker run -it --rm -v `pwd`:/buildroot -w /buildroot -e MIX\_ENV=prod erllambda:20.3-elixir mix erllambda.release
 
 ### step.1
 make s3 bucket: YOUR-BUCKET

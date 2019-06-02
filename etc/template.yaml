@@ -14,11 +14,11 @@ Globals:
           Ref: Table
 
 Resources:
-  erllambdaElixirExample:
+  ServerlessElixirDemo:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: 'Elixir.ServerlessElixirDemo'
-      CodeUri: ../_build/prod/rel/serverless_elixir_demo/releases/0.1.0/serverless_elixir_demo.zip
+      CodeUri: ../_build/prod/rel/serverless_elixir_demo/releases/0.0.1/serverless_elixir_demo.zip
       Description: >-
         A simple backend (read/write to DynamoDB) with a RESTful API endpoint using Amazon API Gateway.
       Timeout: 10
